@@ -244,3 +244,11 @@
  .v26-first-screen .hero.v8-hero-copy{flex:1 0 auto;min-height:0;display:flex;align-items:center;padding-top:14px;padding-bottom:18px}
  .v26-first-screen .ticker{flex:0 0 auto}
 }
+
+/* V27: remove forced mobile viewport stretching and blank space */
+@media(max-width:620px){
+ .v26-first-screen{display:block;min-height:0}
+ .v26-first-screen .v8-cover{margin-top:12px;margin-bottom:0}
+ .v26-first-screen .hero.v8-hero-copy{display:block;min-height:0;flex:none;padding-top:18px;padding-bottom:24px}
+ .v26-first-screen .ticker{margin-top:0}
+}
