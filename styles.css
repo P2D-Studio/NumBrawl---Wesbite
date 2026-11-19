@@ -145,3 +145,8 @@
  .v8-cover img{object-position:center 38%}
  .v8-hero-copy{padding-top:18px;padding-bottom:20px}
 }
+
+/* V10: scale entire banner image; never crop the artwork */
+.v8-cover{height:auto;max-height:none;overflow:visible;background:#091321}
+.v8-cover img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center}
+@media(max-width:620px){.v8-cover{height:auto;max-height:none}.v8-cover img{width:100%;height:auto;max-height:none;object-fit:contain}}
