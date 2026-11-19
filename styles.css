@@ -122,3 +122,8 @@
  .site-footer{padding-bottom:75px}
 }
 @media(prefers-reduced-motion:reduce){#modes .v4-modes{scroll-behavior:auto}}
+
+/* Hero feature graphic and first PvP card artwork */
+.v7-pvp-art{align-items:center;min-height:300px;background:radial-gradient(ellipse at 50% 70%,#3e405e,#161c2d 68%);padding:15px}
+.v7-pvp-art img{display:block;width:min(100%,245px);height:265px;object-fit:contain;filter:drop-shadow(0 12px 20px #0009);border-radius:22px}
+@media(max-width:620px){.v7-pvp-art{min-height:255px}.v7-pvp-art img{height:235px;width:min(100%,230px)}}
