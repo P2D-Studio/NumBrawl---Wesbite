@@ -70,3 +70,34 @@
 .v5-analysis-points h3{font-size:14px;margin:3px 0 8px;letter-spacing:.5px}
 .v5-analysis-points p{margin:0}
 @media(max-width:760px){.v5-analysis{padding:70px 0}.v5-analysis-grid{grid-template-columns:1fr;gap:30px}}
+
+
+/* V5 peer review: desktop readability and mobile swipe cards */
+@media (min-width: 769px) {
+  .content-wrap p,.content-wrap li{font-size:16px;line-height:1.85}
+  .content-wrap h3{font-size:19px}
+  .hero-description,.page-hero p,.section-heading>p,.download-copy p,.v4-progress p,.v5-analysis p{font-size:16px;line-height:1.8}
+  .v4-mode>p,.v4-mode ul{font-size:15px;line-height:1.75}
+  .challenge-grid p,.timer-strip p{font-size:15px}
+  .contact-form label{font-size:14px}
+  .contact-form input,.contact-form select,.contact-form textarea{font-size:15px}
+  .footer-main p,.footer-links{font-size:13px}
+}
+@media (max-width: 620px) {
+  #modes .v4-modes{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;scroll-padding-inline:5%;padding:0 5% 14px;margin:0 -5%;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  #modes .v4-mode{flex:0 0 min(84vw,340px);scroll-snap-align:start}
+  #modes .v4-mode h3{font-size:39px}
+  #modes .v4-screen{min-height:255px}
+  #modes .v5-phone{height:255px}
+  #modes .v4-mode>p{min-height:0}
+  .v5-swipe-hint{display:flex;justify-content:center;align-items:center;gap:9px;color:var(--muted);font-size:12px;font-weight:700;margin:14px 0 0}
+}
+@media (min-width: 621px){.v5-swipe-hint{display:none}}
+/* Desktop download reminder; placeholder QR is not a live store code */
+@media (min-width: 1250px){
+  .v5-qr-dock{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:19;display:flex;flex-direction:column;align-items:center;gap:7px;background:#101e31f5;border:1px solid #36506b;border-radius:9px;padding:11px;box-shadow:0 10px 30px #0007;text-align:center;width:120px}
+  .v5-qr-dock img{width:92px;height:92px;background:white;padding:5px;object-fit:contain}
+  .v5-qr-dock strong{font-size:10px;line-height:1.4}
+  .v5-qr-dock small{font-size:9px;color:var(--muted)}
+}
+@media (max-width: 1249px){.v5-qr-dock{display:none}}
