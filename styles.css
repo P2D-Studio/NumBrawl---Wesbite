@@ -214,3 +214,8 @@
 
 /* V22: improve visibility of analysis feature headings */
 .v5-analysis-points h3{font-size:clamp(19px,1.65vw,24px);line-height:1.15;letter-spacing:.2px;margin:3px 0 9px}
+
+/* V23: tighter difficulty cards after removing decorative numbering */
+.challenge-grid article{min-height:0;padding:24px 26px}
+.challenge-grid h3{margin:0 0 10px}
+.challenge-grid p{margin:0}
