@@ -1,4 +1,4 @@
-# Numbrawl static website — Version 2
+# Numbrawl static website — Version 5
 
 Responsive static website for Numbrawl / P2D Studios. Built with HTML, CSS and a small JavaScript file. No application backend or database is required.
 
@@ -36,3 +36,9 @@ Upload the contents of this folder to a static host such as Cloudflare Pages. Co
 - Review Terms & Conditions and account deletion process.
 - Confirm legal studio/operator name and contact details.
 - Ensure all app-store listing links and support details are accurate.
+
+
+V4: Three-mode marketing homepage, progressive difficulty and simplified top navigation. Events page remains accessible via footer.
+
+
+V5 adds labelled phone-screen placeholders, a dedicated game analysis section, and support@numbrawl.com as the contact email.
