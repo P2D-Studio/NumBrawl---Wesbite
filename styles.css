@@ -134,3 +134,14 @@
 .v8-hero-copy{display:block;min-height:0;padding-top:45px;padding-bottom:42px}
 .v8-hero-copy .hero-copy{max-width:850px}
 @media(max-width:620px){.v8-cover{height:clamp(155px,42vw,250px)}.v8-cover img{object-position:center center}.v8-hero-copy{padding-top:30px;padding-bottom:30px}}
+
+/* V9: compact cover, allowing hero copy in the initial viewport */
+.v8-cover{height:clamp(145px,18vw,260px)}
+.v8-cover img{object-fit:cover;object-position:center 39%}
+.v8-hero-copy{padding-top:26px;padding-bottom:26px}
+.v8-hero-copy .hero-copy{max-width:920px}
+@media(max-width:620px){
+ .v8-cover{height:clamp(105px,31vw,170px)}
+ .v8-cover img{object-position:center 38%}
+ .v8-hero-copy{padding-top:18px;padding-bottom:20px}
+}
