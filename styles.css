@@ -106,3 +106,19 @@
 .v5-feature-graphic{padding-top:22px;padding-bottom:28px}
 .v5-feature-graphic img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid #29405e;box-shadow:0 18px 55px #0005}
 @media(max-width:620px){.v5-feature-graphic{padding-top:12px;padding-bottom:18px}.v5-feature-graphic img{border-radius:7px}}
+
+/* V6: integrated feature artwork, consistent nav/footer and mobile download */
+.v6-feature-hero{min-height:0;aspect-ratio:16/10;overflow:hidden;position:relative;background:#0b1727}
+.v6-feature-hero:before,.v6-feature-hero:after{display:none}
+.v6-feature-art{display:block;width:100%;height:100%;object-fit:contain}
+.v6-feature-caption{position:absolute;bottom:0;left:0;right:0;padding:6px 10px;text-align:center;background:#07101dcc;color:#eaf2ff;font-size:10px;font-weight:800;letter-spacing:1.6px}
+.site-footer .footer-links{align-items:center}
+.site-footer .footer-bottom a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.v6-mobile-download{display:none}
+@media(max-width:620px){
+ .v6-feature-hero{min-height:0;aspect-ratio:16/9;width:100%}
+ .v6-feature-caption{font-size:9px}
+ .v6-mobile-download{display:flex;position:fixed;bottom:12px;right:12px;z-index:25;background:var(--orange);color:#091321;font-size:12px;font-weight:900;padding:11px 16px;border-radius:24px;box-shadow:0 5px 20px #0009;gap:10px}
+ .site-footer{padding-bottom:75px}
+}
+@media(prefers-reduced-motion:reduce){#modes .v4-modes{scroll-behavior:auto}}
