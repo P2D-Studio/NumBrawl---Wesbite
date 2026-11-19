@@ -190,3 +190,10 @@
 /* V18: original introduction, wider measure with natural two-line wrapping */
 .hero.v8-hero-copy .hero-description{width:100%;max-width:1180px;white-space:normal;letter-spacing:normal;text-wrap:balance}
 @media(min-width:900px){.hero.v8-hero-copy .hero-description{white-space:normal;font-size:clamp(14px,1.12vw,16px);line-height:1.5}}
+
+/* V19: compact mode imagery beside each title */
+.v19-mode-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;margin:6px 0 14px}
+.v19-mode-heading h3{margin:0;min-width:0;flex:1}
+.v19-mode-icon,.v19-cpu-icon{width:82px;height:82px;flex:0 0 82px;object-fit:contain;border-radius:15px;background:#111c30}
+.v19-cpu-icon{display:flex;align-items:center;justify-content:center;border:2px solid #488dff;color:#e5f0ff;font-size:20px;font-weight:900;letter-spacing:1px}
+@media(max-width:620px){.v19-mode-icon,.v19-cpu-icon{width:68px;height:68px;flex-basis:68px}}
