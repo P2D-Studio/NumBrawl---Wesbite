@@ -235,3 +235,12 @@
 .challenge-grid h3{font-size:clamp(30px,2.8vw,37px);margin:0 0 5px;line-height:1}
 .challenge-grid p{font-size:12px;line-height:1.45}
 @media(max-width:620px){.challenge-grid{gap:8px}.challenge-grid article{min-height:0;padding:13px 17px}.challenge-grid h3{font-size:31px;margin:0 0 4px}.challenge-grid p{font-size:12px;line-height:1.4}}
+
+/* V26: mobile first viewport ends precisely after ticker */
+@media(min-width:621px){.v26-first-screen{display:contents}}
+@media(max-width:620px){
+ .v26-first-screen{display:flex;flex-direction:column;min-height:calc(100svh - 76px)}
+ .v26-first-screen .v8-cover{flex:0 0 auto}
+ .v26-first-screen .hero.v8-hero-copy{flex:1 0 auto;min-height:0;display:flex;align-items:center;padding-top:14px;padding-bottom:18px}
+ .v26-first-screen .ticker{flex:0 0 auto}
+}
