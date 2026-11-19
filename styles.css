@@ -229,3 +229,9 @@
  .ticker{padding:11px 0}
  #modes{padding-top:65px}
 }
+
+/* V25: compact difficulty cards on desktop and mobile */
+.challenge-grid article{min-height:0;padding:16px 20px}
+.challenge-grid h3{font-size:clamp(30px,2.8vw,37px);margin:0 0 5px;line-height:1}
+.challenge-grid p{font-size:12px;line-height:1.45}
+@media(max-width:620px){.challenge-grid{gap:8px}.challenge-grid article{min-height:0;padding:13px 17px}.challenge-grid h3{font-size:31px;margin:0 0 4px}.challenge-grid p{font-size:12px;line-height:1.4}}
