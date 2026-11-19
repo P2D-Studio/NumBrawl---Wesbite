@@ -252,3 +252,10 @@
  .v26-first-screen .hero.v8-hero-copy{display:block;min-height:0;flex:none;padding-top:18px;padding-bottom:24px}
  .v26-first-screen .ticker{margin-top:0}
 }
+
+/* V28: separate mobile banner artwork with its own taller presentation */
+@media(max-width:620px){
+ .v8-cover{width:96%;height:auto;aspect-ratio:auto;max-height:none;margin:12px auto 0}
+ .v8-cover picture{display:block;width:100%}
+ .v8-cover picture img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+}
