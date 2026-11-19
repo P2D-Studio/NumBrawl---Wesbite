@@ -167,3 +167,9 @@
 /* Single-line hero heading, responsive font sizing */
 .v14-hero-heading{white-space:nowrap;font-size:clamp(18px,4.1vw,58px);letter-spacing:-.035em}
 @media(max-width:620px){.v14-hero-heading{font-size:clamp(15px,4.1vw,25px);letter-spacing:-.045em}}
+
+/* V15: override legacy .hero h1 and narrow hero-copy rules */
+.hero.v8-hero-copy .hero-copy{width:100%;max-width:none;min-width:0}
+.hero.v8-hero-copy h1.v14-hero-heading{display:block;width:100%;max-width:100%;font-size:clamp(18px,3.5vw,52px);line-height:1.12;letter-spacing:-.035em;white-space:nowrap;overflow:visible}
+.hero.v8-hero-copy h1.v14-hero-heading .orange{display:inline;white-space:nowrap}
+@media(max-width:620px){.hero.v8-hero-copy h1.v14-hero-heading{font-size:clamp(12px,3.7vw,23px);letter-spacing:-.045em}}
