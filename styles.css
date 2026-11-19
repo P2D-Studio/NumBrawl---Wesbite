@@ -211,3 +211,6 @@
 #modes .v20-mode-heading h3{flex:1;min-width:0;margin:0;font-size:clamp(28px,2.5vw,39px);line-height:1.04}
 .hero-tagline{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(19px,2.1vw,25px);font-weight:700;line-height:1.35;letter-spacing:0;color:#e8eef9}
 @media(max-width:620px){#modes .v20-mode-heading .v20-mode-icon{width:112px!important;height:112px!important;max-width:112px!important;max-height:112px!important;flex-basis:112px}#modes .v20-mode-heading h3{font-size:clamp(26px,8vw,36px)}}
+
+/* V22: improve visibility of analysis feature headings */
+.v5-analysis-points h3{font-size:clamp(19px,1.65vw,24px);line-height:1.15;letter-spacing:.2px;margin:3px 0 9px}
