@@ -27,28 +27,36 @@ if(contactForm){
 }
 
 
-/* Mobile game-mode carousel: automatic, pauses for user interaction and accessibility */
+/* Mobile game-mode carousel: starts when visible and loops from last to first. */
 const modeTrack=document.querySelector('#modes .v4-modes');
 if(modeTrack){
- const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- let timer=null,paused=false;
  const cards=Array.from(modeTrack.querySelectorAll('.v4-mode'));
+ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
  const isMobile=()=>window.matchMedia('(max-width: 620px)').matches;
+ let timer=null,inView=false,interacting=false,resumeTimer=null;
+ const stop=()=>{if(timer){clearInterval(timer);timer=null}};
+ const cardLeft=card=>card.offsetLeft-cards[0].offsetLeft;
  const advance=()=>{
-   if(!isMobile()||paused||reducedMotion.matches||cards.length<2||document.hidden)return;
+   if(!isMobile()||!inView||interacting||document.hidden||reducedMotion.matches||cards.length<2)return;
    const current=modeTrack.scrollLeft;
-   let next=cards.find(card=>card.offsetLeft-modeTrack.offsetLeft>current+20);
-   modeTrack.scrollTo({left:next?next.offsetLeft-modeTrack.offsetLeft:0,behavior:'smooth'});
+   const index=cards.reduce((best,card,i)=>Math.abs(cardLeft(card)-current)<Math.abs(cardLeft(cards[best])-current)?i:best,0);
+   const next=(index+1)%cards.length;
+   modeTrack.scrollTo({left:cardLeft(cards[next]),behavior:next===0?'instant':'smooth'});
  };
- const start=()=>{if(!timer)timer=window.setInterval(advance,4500)};
- const stop=()=>{if(timer){window.clearInterval(timer);timer=null}};
- const pause=()=>{paused=true;stop()};
- modeTrack.addEventListener('touchstart',pause,{passive:true});
- modeTrack.addEventListener('pointerdown',pause,{passive:true});
- modeTrack.addEventListener('focusin',pause);
- modeTrack.addEventListener('mouseenter',()=>{if(isMobile())stop()});
- modeTrack.addEventListener('mouseleave',()=>{if(!paused&&!reducedMotion.matches)start()});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else if(!paused&&!reducedMotion.matches)start()});
- window.addEventListener('resize',()=>{if(isMobile()&&!paused&&!reducedMotion.matches)start();else stop()});
- if(isMobile()&&!reducedMotion.matches)start();
+ const sync=()=>{stop();if(isMobile()&&inView&&!interacting&&!document.hidden&&!reducedMotion.matches&&cards.length>1)timer=setInterval(advance,4500)};
+ const hold=()=>{
+   interacting=true;stop();clearTimeout(resumeTimer);
+   resumeTimer=setTimeout(()=>{interacting=false;sync()},8500);
+ };
+ modeTrack.addEventListener('touchstart',hold,{passive:true});
+ modeTrack.addEventListener('pointerdown',hold,{passive:true});
+ modeTrack.addEventListener('focusin',hold);
+ const observer=new IntersectionObserver(entries=>{
+   inView=entries[0].isIntersecting;
+   sync();
+ },{threshold:0.25});
+ observer.observe(modeTrack);
+ document.addEventListener('visibilitychange',sync);
+ window.addEventListener('resize',sync);
+ reducedMotion.addEventListener('change',sync);
 }
