@@ -197,3 +197,10 @@
 .v19-mode-icon,.v19-cpu-icon{width:82px;height:82px;flex:0 0 82px;object-fit:contain;border-radius:15px;background:#111c30}
 .v19-cpu-icon{display:flex;align-items:center;justify-content:center;border:2px solid #488dff;color:#e5f0ff;font-size:20px;font-weight:900;letter-spacing:1px}
 @media(max-width:620px){.v19-mode-icon,.v19-cpu-icon{width:68px;height:68px;flex-basis:68px}}
+
+/* V20: uploaded mode artwork on the left of card titles */
+.v20-mode-heading{display:flex;align-items:center;gap:16px;margin:10px 0 18px;min-width:0}
+.v20-mode-heading h3{flex:1;min-width:0;margin:0;line-height:1.08}
+.v20-mode-icon{display:block;width:108px;height:108px;flex:0 0 108px;object-fit:contain;border-radius:12px;background:transparent}
+@media(max-width:900px){.v20-mode-heading{gap:10px}.v20-mode-icon{width:86px;height:86px;flex-basis:86px}}
+@media(max-width:620px){.v20-mode-heading{gap:12px}.v20-mode-icon{width:96px;height:96px;flex-basis:96px}}
