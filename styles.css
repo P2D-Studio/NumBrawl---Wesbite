@@ -163,3 +163,7 @@
 
 /* V13: requested 250px desktop banner height, artwork fully contained */
 @media(min-width:621px){.v8-cover{height:250px;aspect-ratio:auto}.v8-cover img{width:100%;height:100%;object-fit:contain}}
+
+/* Single-line hero heading, responsive font sizing */
+.v14-hero-heading{white-space:nowrap;font-size:clamp(18px,4.1vw,58px);letter-spacing:-.035em}
+@media(max-width:620px){.v14-hero-heading{font-size:clamp(15px,4.1vw,25px);letter-spacing:-.045em}}
