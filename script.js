@@ -43,7 +43,7 @@ if(modeTrack){
    const next=(index+1)%cards.length;
    modeTrack.scrollTo({left:cardLeft(cards[next]),behavior:next===0?'instant':'smooth'});
  };
- const sync=()=>{stop();if(isMobile()&&inView&&!interacting&&!document.hidden&&!reducedMotion.matches&&cards.length>1)timer=setInterval(advance,4500)};
+ const sync=()=>{stop();if(isMobile()&&inView&&!interacting&&!document.hidden&&!reducedMotion.matches&&cards.length>1)timer=setInterval(advance,3000)};
  const hold=()=>{
    interacting=true;stop();clearTimeout(resumeTimer);
    resumeTimer=setTimeout(()=>{interacting=false;sync()},8500);
